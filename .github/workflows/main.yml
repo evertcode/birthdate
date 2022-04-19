@@ -7,16 +7,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    name: Build LaTex CV to PDF
     container: texlive/texlive:latest
-
     steps:
-    - name: Checkout repo
+    - name: Checkout Repo
       uses: actions/checkout@v3
 
-    - name: Compile
+    - name: Compile LaTex
       run: make
 
     - uses: actions/upload-artifact@v3
       with:
         name: cv-hebert
-        path: ./*.pdf
+        path: ./upload/*.pdf
