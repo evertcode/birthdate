@@ -17,6 +17,7 @@ jobs:
       run: make
 
     - uses: actions/upload-artifact@v3
+      name: Upload PDF
       with:
         name: cv-hebert
-        path: ./upload/*.pdf
+        path: ./output/*.pdf
